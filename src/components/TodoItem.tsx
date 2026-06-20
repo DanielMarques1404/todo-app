@@ -12,10 +12,10 @@ export const TodoItem = ({ item, onRemove }: TodoItemProps) => {
   const [isCompleted, setIsCompleted] = useState(item?.completed || false);
 
   return (
-    <div className="flex items-center justify-between rounded-md bg-white p-4 shadow-xl shadow-slate-200/70 dark:bg-slate-900 dark:shadow-black/20 w-full">
+    <div className="flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300">
       <div className="flex items-center gap-4">
         <CompleteTodoButton active={isCompleted} toggleComplete={() => setIsCompleted(!isCompleted)} />
-        <span className={cn("text-sm text-slate-700 dark:text-slate-300", isCompleted && "line-through")}>
+        <span className={cn("text-md font-semibold text-gray-600 dark:text-slate-300", isCompleted && "line-through")}>
           {item.label}
         </span>
       </div>
