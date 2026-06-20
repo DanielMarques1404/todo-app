@@ -21,7 +21,7 @@
   --color-navy-950: hsl(235, 21%, 11%);
 }
 
-:root {
+/* :root {
   --check-background: linear-gradient(
     135deg,
     hsl(192, 100%, 67%),
@@ -50,7 +50,7 @@
 
     color-scheme: dark;
   }
-}
+} */
 
 *,
 *::before,
