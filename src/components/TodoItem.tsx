@@ -1,21 +1,33 @@
 import { useState } from "react";
 import type { TodoItemType } from "../types";
-import { CompleteTodoButton } from "./ui/CompleteTodoButton";
 import { cn } from "../utils/cn";
+import { CompleteTodoButton } from "./ui/CompleteTodoButton";
 
 type TodoItemProps = {
   item: TodoItemType;
+  onComplete?: (id: string) => void;
   onRemove: (id: string) => void;
 };
 
-export const TodoItem = ({ item, onRemove }: TodoItemProps) => {
+export const TodoItem = ({ item, onComplete, onRemove }: TodoItemProps) => {
   const [isCompleted, setIsCompleted] = useState(item?.completed || false);
 
   return (
     <div className="flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300">
       <div className="flex items-center gap-4">
-        <CompleteTodoButton active={isCompleted} toggleComplete={() => setIsCompleted(!isCompleted)} />
-        <span className={cn("text-md font-semibold text-gray-600 dark:text-slate-300", isCompleted && "line-through")}>
+        <CompleteTodoButton
+          active={isCompleted}
+          toggleComplete={() => {
+            setIsCompleted(!isCompleted);
+            onComplete?.(item.id);
+          }}
+        />
+        <span
+          className={cn(
+            "text-md font-semibold text-gray-600 dark:text-slate-300",
+            isCompleted && "line-through",
+          )}
+        >
           {item.label}
         </span>
       </div>
