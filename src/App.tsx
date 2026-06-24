@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Header } from "./components/Header";
+import { TodoFilter } from "./components/TodoFilter";
 import { TodoInput } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
 import type { TodoItemType } from "./types";
-import { TodoFilter } from "./components/TodoFilter";
 
 export function App() {
   const [items, setItems] = useState<TodoItemType[]>([]);
@@ -52,10 +52,10 @@ export function App() {
   };
 
   return (
-    <main className="min-h-screen  text-slate-950 dark:bg-slate-950 dark:text-white">
-      <section className="mx-auto flex max-w-xl flex-col gap-6 bg-gray-50 min-h-screen">
+    <main className="min-h-screen text-slate-950 dark:bg-slate-950 dark:text-white">
+      <section className="flex flex-col gap-6 bg-gray-50 min-h-screen">
         <Header />
-        <div className="flex flex-col gap-6 -mt-32 px-4">
+        <div className="flex flex-col gap-6 -mt-32 px-4 max-w-125 mx-auto w-full">
           <TodoInput onCreate={createToDo} />
           <div className="w-full bg-white dark:bg-slate-900 rounded-md overflow-hidden">
             <TodoList
@@ -66,9 +66,11 @@ export function App() {
               onFilterChange={(newFilter) => setFilter(newFilter)}
             />
           </div>
-        </div>
-        <div className="flex items-center justify-center mx-auto sm:hidden w-full px-4 bg-white shadow-xl shadow-slate-200/70 dark:shadow-black/20">
-          <TodoFilter filter={filter} onFilterChange={(newFilter) => setFilter(newFilter)} />
+          <div className="flex items-center justify-center sm:hidden w-full bg-blue-500 shadow-xl shadow-slate-200/70 dark:shadow-black/20">
+            <TodoFilter
+              onFilterChange={(newFilter) => setFilter(newFilter)}
+            />
+          </div>
         </div>
       </section>
     </main>

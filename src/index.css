@@ -21,36 +21,6 @@
   --color-navy-950: hsl(235, 21%, 11%);
 }
 
-/* :root {
-  --check-background: linear-gradient(
-    135deg,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
-  --page-background: hsl(0, 0%, 98%);
-  --surface-background: hsl(0, 0%, 100%);
-  --text-primary: hsl(235, 19%, 35%);
-  --text-muted: hsl(236, 9%, 61%);
-
-  color: var(--text-primary);
-  background-color: var(--page-background);
-  color-scheme: light;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page-background: hsl(235, 21%, 11%);
-    --surface-background: hsl(235, 24%, 19%);
-    --text-primary: hsl(234, 39%, 85%);
-    --text-muted: hsl(235, 16%, 43%);
-
-    color-scheme: dark;
-  }
-} */
 
 *,
 *::before,
