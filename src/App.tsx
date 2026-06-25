@@ -16,7 +16,7 @@ export function App() {
 
   return (
     <main className="min-h-screen text-slate-950 dark:bg-slate-950 dark:text-white">
-      <section className="flex flex-col gap-6 bg-gray-50 min-h-screen">
+      <section className="flex min-h-screen flex-col gap-6 bg-gray-50 dark:bg-navy-950">
         <Header />
         <div className="flex flex-col gap-6 -mt-32 px-4 max-w-125 mx-auto w-full">
           <TodoInput onCreate={createTodo} />
