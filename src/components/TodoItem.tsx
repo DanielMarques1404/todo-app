@@ -2,18 +2,24 @@ import { useState } from "react";
 import type { TodoItemType } from "../types";
 import { cn } from "../utils/cn";
 import { CompleteTodoButton } from "./ui/CompleteTodoButton";
+import { useSortable } from "@dnd-kit/react/sortable";
 
 type TodoItemProps = {
   item: TodoItemType;
+  index: number;
   onComplete?: (id: string) => void;
   onRemove: (id: string) => void;
 };
 
-export const TodoItem = ({ item, onComplete, onRemove }: TodoItemProps) => {
+export const TodoItem = ({ item, index, onComplete, onRemove }: TodoItemProps) => {
   const [isCompleted, setIsCompleted] = useState(item?.completed || false);
+  const { ref } = useSortable({
+    id: item.id,
+    index: index,
+  });
 
   return (
-    <div className="flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300">
+    <li ref={ref} className="flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300">
       <div className="flex items-center gap-4">
         <CompleteTodoButton
           active={isCompleted}
@@ -52,6 +58,6 @@ export const TodoItem = ({ item, onComplete, onRemove }: TodoItemProps) => {
           </svg>
         </button>
       )}
-    </div>
+    </li>
   );
 };

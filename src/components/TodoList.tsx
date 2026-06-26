@@ -19,14 +19,17 @@ export const TodoList = ({
 }: TodoItemProps) => {
   return (
     <div className="flex flex-col gap-1 w-full shadow-xl shadow-slate-200/70 dark:shadow-black/20">
-      {items.map((item) => (
-        <TodoItem
-          key={item.id}
-          item={item}
-          onRemove={onRemoveItem}
-          onComplete={onCompleteItem}
-        />
-      ))}
+      <ul>
+        {items.map((item, idx) => (
+          <TodoItem
+            key={item.id}
+            item={item}
+            index={idx}
+            onRemove={onRemoveItem}
+            onComplete={onCompleteItem}
+          />
+        ))}
+      </ul>
       <TodoSummary
         total={items.length}
         completed={items.filter((item) => item.completed).length}
