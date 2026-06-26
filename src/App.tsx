@@ -11,6 +11,8 @@ export function App() {
     completeItem,
     clearCompleted,
     removeItem,
+    reorderItems,
+    canReorder,
     setFilter,
   } = useTodos();
 
@@ -27,6 +29,8 @@ export function App() {
               onCompleteItem={completeItem}
               onClearCompleted={clearCompleted}
               onFilterChange={(newFilter) => setFilter(newFilter)}
+              onReorderItems={reorderItems}
+              canReorder={canReorder}
             />
           </div>
           <div className="flex items-center justify-center sm:hidden w-full bg-blue-500 shadow-xl shadow-slate-200/70 dark:shadow-black/20">
@@ -34,6 +38,11 @@ export function App() {
               onFilterChange={(newFilter) => setFilter(newFilter)}
             />
           </div>
+          {canReorder && (
+            <p className="text-center text-sm font-semibold text-gray-600 dark:text-purple-600">
+              Drag and drop to reorder list
+            </p>
+          )}
         </div>
       </section>
     </main>

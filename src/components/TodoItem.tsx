@@ -7,19 +7,33 @@ import { useSortable } from "@dnd-kit/react/sortable";
 type TodoItemProps = {
   item: TodoItemType;
   index: number;
+  canReorder: boolean;
   onComplete?: (id: string) => void;
   onRemove: (id: string) => void;
 };
 
-export const TodoItem = ({ item, index, onComplete, onRemove }: TodoItemProps) => {
+export const TodoItem = ({
+  item,
+  index,
+  canReorder,
+  onComplete,
+  onRemove,
+}: TodoItemProps) => {
   const [isCompleted, setIsCompleted] = useState(item?.completed || false);
   const { ref } = useSortable({
     id: item.id,
-    index: index,
+    index,
+    disabled: !canReorder,
   });
 
   return (
-    <li ref={ref} className="flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300">
+    <li
+      ref={ref}
+      className={cn(
+        "flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300",
+        canReorder && "cursor-grab active:cursor-grabbing",
+      )}
+    >
       <div className="flex items-center gap-4">
         <CompleteTodoButton
           active={isCompleted}
