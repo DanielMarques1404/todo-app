@@ -17,12 +17,12 @@ export function App() {
   } = useTodos();
 
   return (
-    <main className="min-h-screen text-slate-950 dark:bg-slate-950 dark:text-white">
+    <main className="min-h-screen text-navy-850 dark:bg-navy-950 dark:text-purple-300">
       <section className="flex min-h-screen flex-col gap-6 bg-gray-50 dark:bg-navy-950">
         <Header />
         <div className="flex flex-col gap-6 -mt-32 px-4 max-w-125 mx-auto w-full">
           <TodoInput onCreate={createTodo} />
-          <div className="w-full bg-white dark:bg-slate-900 rounded-md overflow-hidden">
+          <div className="w-full overflow-hidden rounded-md bg-gray-50 dark:bg-navy-900">
             <TodoList
               items={filteredItems}
               onRemoveItem={removeItem}
@@ -33,7 +33,7 @@ export function App() {
               canReorder={canReorder}
             />
           </div>
-          <div className="flex items-center justify-center sm:hidden w-full bg-blue-500 shadow-xl shadow-slate-200/70 dark:shadow-black/20">
+          <div className="flex w-full items-center justify-center bg-blue-500 shadow-xl shadow-gray-300/70 dark:shadow-navy-950/20 sm:hidden">
             <TodoFilter
               onFilterChange={(newFilter) => setFilter(newFilter)}
             />

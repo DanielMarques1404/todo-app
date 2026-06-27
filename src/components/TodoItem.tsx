@@ -30,7 +30,7 @@ export const TodoItem = ({
     <li
       ref={ref}
       className={cn(
-        "flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300",
+        "flex w-full items-center justify-between border-b border-gray-300 bg-gray-50 p-5 dark:border-purple-800 dark:bg-navy-900",
         canReorder && "cursor-grab active:cursor-grabbing",
       )}
     >
@@ -44,7 +44,7 @@ export const TodoItem = ({
         />
         <span
           className={cn(
-            "text-md font-semibold text-gray-600 dark:text-slate-300",
+            "text-md font-semibold text-navy-850 dark:text-purple-300",
             isCompleted && "line-through",
           )}
         >
@@ -53,7 +53,7 @@ export const TodoItem = ({
       </div>
       {onRemove && (
         <button
-          className="text-slate-400 hover:text-red-500 focus:outline-none"
+          className="text-gray-600 hover:text-navy-850 focus:outline-none dark:text-purple-600 dark:hover:text-purple-100"
           onClick={() => onRemove(item.id)}
         >
           <svg

@@ -35,7 +35,7 @@ export const TodoList = ({
   };
 
   return (
-    <div className="flex flex-col gap-1 w-full shadow-xl shadow-slate-200/70 dark:shadow-black/20">
+    <div className="flex w-full flex-col gap-1 shadow-xl shadow-gray-300/70 dark:shadow-navy-950/20">
       <DragDropProvider onDragEnd={handleDragEnd}>
         <ul>
           {items.map((item, idx) => (

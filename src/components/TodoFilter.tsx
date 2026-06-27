@@ -4,7 +4,7 @@ type TodoFilterProps = {
 
 export const TodoFilter = ({ onFilterChange }: TodoFilterProps) => {
   return (
-    <div className="flex items-center justify-center gap-4 bg-white py-4 dark:bg-slate-900 w-full cursor-pointer text-sm text-purple-600 dark:text-slate-400">
+    <div className="flex w-full cursor-pointer items-center justify-center gap-4 bg-gray-50 py-4 text-sm text-purple-600 dark:bg-navy-900 dark:text-purple-600">
       <p
         className={"font-bold text-blue-500"}
         onClick={() => onFilterChange("all")}
@@ -12,13 +12,13 @@ export const TodoFilter = ({ onFilterChange }: TodoFilterProps) => {
         All
       </p>
       <p
-        className={"font-bold text-gray-600 hover:text-purple-700"}
+        className={"font-bold text-gray-600 hover:text-navy-850 dark:hover:text-purple-100"}
         onClick={() => onFilterChange("active")}
       >
         Active
       </p>
       <p
-        className={"font-bold text-gray-600 hover:text-purple-700"}
+        className={"font-bold text-gray-600 hover:text-navy-850 dark:hover:text-purple-100"}
         onClick={() => onFilterChange("completed")}
       >
         Completed
