@@ -12,10 +12,17 @@ export const CompleteTodoButton = ({
   return (
     <div
       className={cn(
-        "rounded-full w-6 h-6 border-2 border-slate-300 dark:border-slate-600",
-        active && "bg-blue-300",
+        "flex h-6 w-6 items-center justify-center rounded-full border-2 border-slate-300 dark:border-slate-600 hover:border-blue-300",
+        active &&
+          "border-none bg-linear-to-br from-cyan-300 to-purple-500",
       )}
       onClick={toggleComplete}
-    ></div>
+    >
+      <img
+        src="/assets/images/icon-check.svg"
+        alt=""
+        className={cn("h-3 w-3", active ? "block" : "hidden")}
+      />
+    </div>
   );
 };

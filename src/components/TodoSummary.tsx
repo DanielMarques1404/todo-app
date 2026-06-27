@@ -15,18 +15,18 @@ export const TodoSummary = ({
 }: TodoSummaryProps) => {
   return (
     <div className="flex items-center justify-between bg-white p-5 dark:bg-slate-900 w-full border-b border-gray-300 text-sm text-gray-600 dark:text-slate-400">
-      <p>
+      <div>
         {`${total - completed} ${total - completed === 1 ? "item" : "items"} left`}
-      </p>
-      <p className="hidden sm:block">
+      </div>
+      <div className="hidden sm:block">
         <TodoFilter onFilterChange={onFilterChange} />
-      </p>
-      <p
+      </div>
+      <div
         className="hover:text-purple-700 cursor-pointer"
         onClick={onClearCompleted}
       >
         Clear Completed
-      </p>
+      </div>
     </div>
   );
 };
