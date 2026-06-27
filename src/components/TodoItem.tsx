@@ -34,7 +34,7 @@ export const TodoItem = ({
         canReorder && "cursor-grab active:cursor-grabbing",
       )}
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 hover:font-semibold">
         <CompleteTodoButton
           active={isCompleted}
           toggleComplete={() => {
@@ -44,7 +44,7 @@ export const TodoItem = ({
         />
         <span
           className={cn(
-            "text-md font-semibold text-navy-850 dark:text-purple-300",
+            "text-md text-navy-850 dark:text-purple-300",
             isCompleted && "line-through",
           )}
         >
